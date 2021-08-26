@@ -1,10 +1,12 @@
 import React from "react";
-
-const Posts = () => {
+import QueryString from "query-string";
+const Posts = (props) => {
+  const result = QueryString.parse(props.location.search);
+  console.log(result);
   return (
     <div>
       <h1>Posts</h1>
-      Year: , Month:
+      Year: {props.match.params.year}, Month{props.match.params.month}:
     </div>
   );
 };
